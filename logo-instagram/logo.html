@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Logo ai.assistant.ro</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  /* Teme: ?theme=tech (implicit) | bw | gold */
+  body.tech { --bg: #070a18; --c1: #a78bfa; --c2: #7c3aed; --c3: #22d3ee; --accent: #22d3ee;
+    --fill: rgba(124,58,237,.10); --node: #070a18; --text: #f4f6ff; --tag: #9aa4c7; --grid: .07; --gridc: #fff;
+    --glow: url(#glow); --bgfx: radial-gradient(circle at 30% 25%, rgba(124,58,237,.35), transparent 55%), radial-gradient(circle at 75% 80%, rgba(34,211,238,.25), transparent 55%); }
+  body.bw { --bg: #ffffff; --c1: #0a0a0a; --c2: #0a0a0a; --c3: #0a0a0a; --accent: #0a0a0a;
+    --fill: none; --node: #ffffff; --text: #0a0a0a; --tag: #555; --grid: 0; --gridc: #000; --bgfx: none; --glow: none; }
+  body.gold { --bg: #0a0a0a; --c1: #f7e7b4; --c2: #d4af5f; --c3: #a8803a; --accent: #f7e7b4;
+    --fill: rgba(212,175,95,.06); --node: #0a0a0a; --text: #f3ede0; --tag: #bfa978; --grid: 0; --gridc: #d4af5f; --glow: url(#glow);
+    --bgfx: radial-gradient(circle at 50% 40%, rgba(212,175,95,.16), transparent 60%), radial-gradient(ellipse at 50% 0%, #1c1a17, transparent 70%); }
+
+  html, body { margin: 0; padding: 0; background: var(--bg); font-family: 'Sora', sans-serif; }
+  .canvas { position: relative; overflow: hidden; display: none; align-items: center; justify-content: center;
+    background: var(--bgfx), var(--bg); }
+  .canvas.on { display: flex; }
+  .grid { position: absolute; inset: 0; opacity: var(--grid);
+    background-image: linear-gradient(var(--gridc) 1px, transparent 1px), linear-gradient(90deg, var(--gridc) 1px, transparent 1px);
+    background-size: 60px 60px; }
+  #profil { width: 1080px; height: 1080px; }
+  #complet { width: 1080px; height: 1080px; flex-direction: column; }
+  .name { font-weight: 800; font-size: 104px; letter-spacing: -2px; color: var(--text); margin-top: 30px; }
+  .name .ai { background: linear-gradient(90deg, var(--c1), var(--c3)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .name .ro { color: var(--accent); }
+  .tag { margin-top: 18px; font-weight: 600; font-size: 28px; letter-spacing: 9px; color: var(--tag); }
+
+  body.gold .name { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 120px; letter-spacing: 1px; }
+  body.gold .name .ai, body.gold .name .ro { background: linear-gradient(180deg, #f7e7b4, #d4af5f 50%, #a8803a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  body.gold .tag { font-weight: 400; }
+  body.bw .name .ai { -webkit-text-fill-color: #0a0a0a; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <linearGradient id="grad" gradientUnits="userSpaceOnUse" x1="60" y1="60" x2="340" y2="360">
+      <stop offset="0" style="stop-color: var(--c1)"/><stop offset=".5" style="stop-color: var(--c2)"/><stop offset="1" style="stop-color: var(--c3)"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g id="emblem">
+      <path style="filter: var(--glow); fill: var(--fill)" d="M110 60 H290 A50 50 0 0 1 340 110 V260 A50 50 0 0 1 290 310 H170 L110 360 V310 A50 50 0 0 1 60 260 V110 A50 50 0 0 1 110 60 Z"
+            stroke="url(#grad)" stroke-width="14" stroke-linejoin="round"/>
+      <g stroke="url(#grad)" stroke-width="13" stroke-linecap="round" fill="none">
+        <line x1="200" y1="112" x2="140" y2="262"/>
+        <line x1="200" y1="112" x2="260" y2="262"/>
+        <line x1="164" y1="205" x2="236" y2="205"/>
+      </g>
+      <g style="fill: var(--node)" stroke="url(#grad)" stroke-width="7">
+        <circle cx="200" cy="112" r="15"/><circle cx="140" cy="262" r="13"/><circle cx="260" cy="262" r="13"/>
+        <circle cx="164" cy="205" r="10"/><circle cx="236" cy="205" r="10"/>
+      </g>
+      <circle cx="200" cy="112" r="5" style="fill: var(--accent)"/>
+      <path style="filter: var(--glow); fill: var(--accent)" d="M298 82 l7 17 17 7 -17 7 -7 17 -7 -17 -17 -7 17 -7z"/>
+    </g>
+  </defs>
+</svg>
+
+<div class="canvas" id="profil">
+  <div class="grid"></div>
+  <svg width="720" height="720" viewBox="10 20 380 380"><use href="#emblem"/></svg>
+</div>
+
+<div class="canvas" id="complet">
+  <div class="grid"></div>
+  <svg width="500" height="500" viewBox="10 20 380 380"><use href="#emblem"/></svg>
+  <div class="name"><span class="ai">ai</span>.assistant<span class="ro">.ro</span></div>
+  <div class="tag">AUTOMATIZARE CU AI PENTRU BUSINESS</div>
+</div>
+
+<script>
+  const q = new URLSearchParams(location.search);
+  document.body.className = q.get('theme') || 'tech';
+  document.getElementById(q.get('v') || 'complet').classList.add('on');
+</script>
+</body>
+</html>

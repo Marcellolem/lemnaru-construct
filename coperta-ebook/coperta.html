@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<title>Copertă e-book</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; background: #0a0a0a; }
+  .cover {
+    width: 1600px; height: 2560px; position: relative; overflow: hidden;
+    background:
+      radial-gradient(ellipse 900px 900px at 50% 58%, rgba(212,175,95,.10), transparent 70%),
+      radial-gradient(ellipse at 50% 0%, #1c1a17 0%, #0b0b0b 55%, #050505 100%);
+    font-family: 'Montserrat', sans-serif; color: #f3ede0;
+  }
+  .frame { position: absolute; inset: 70px; border: 2px solid rgba(212,175,95,.55); }
+  .frame::after { content: ""; position: absolute; inset: 18px; border: 1px solid rgba(212,175,95,.25); }
+  .gold {
+    background: linear-gradient(180deg, #f7e7b4 0%, #d9b45f 45%, #a8803a 75%, #e8cf8a 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .label {
+    position: absolute; top: 250px; width: 100%; text-align: center;
+    font-weight: 500; font-size: 40px; letter-spacing: 18px; color: #d4af5f;
+  }
+  .label span { display: inline-block; width: 90px; height: 2px; background: #d4af5f; vertical-align: middle; margin: 0 30px 8px; opacity: .7; }
+  .title {
+    position: absolute; top: 360px; width: 100%; text-align: center;
+    font-family: 'Cormorant Garamond', serif; font-weight: 700; line-height: .95;
+  }
+  .title .ai { font-size: 380px; letter-spacing: 10px; display: block; }
+  .title .rest { font-size: 128px; font-weight: 600; display: block; margin-top: 10px; }
+  .subtitle {
+    position: absolute; top: 1050px; width: 100%; text-align: center;
+    font-weight: 300; font-size: 54px; letter-spacing: 3px; color: #ece4d2;
+  }
+  .art { position: absolute; top: 1180px; left: 50%; transform: translateX(-50%); }
+  .footer {
+    position: absolute; bottom: 210px; width: 100%; text-align: center;
+    font-size: 34px; letter-spacing: 10px; color: #bfa978; font-weight: 400;
+  }
+  .footer .dot { color: #d4af5f; margin: 0 22px; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <div class="frame"></div>
+
+  <div class="label"><span></span>GHID PRACTIC<span></span></div>
+
+  <div class="title gold">
+    <span class="ai">AI</span>
+    <span class="rest">pentru Freelanceri<br>și PFA</span>
+  </div>
+
+  <div class="subtitle">Lucrează mai puțin, câștigă mai mult</div>
+
+  <svg class="art" width="1100" height="1000" viewBox="0 0 1100 1000" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#f7e7b4"/><stop offset=".5" stop-color="#d4af5f"/><stop offset="1" stop-color="#9c7634"/>
+      </linearGradient>
+      <radialGradient id="glow" cx=".5" cy=".5" r=".5">
+        <stop offset="0" stop-color="#d4af5f" stop-opacity=".35"/><stop offset="1" stop-color="#d4af5f" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="550" cy="470" r="420" fill="url(#glow)"/>
+    <circle cx="550" cy="470" r="400" fill="none" stroke="url(#g)" stroke-width="2" opacity=".5"/>
+    <circle cx="550" cy="470" r="360" fill="none" stroke="url(#g)" stroke-width="1" opacity=".3" stroke-dasharray="4 14"/>
+
+    <!-- head profile -->
+    <path d="M430 820 L430 720 C380 700 330 650 320 580 L290 560 L320 520 C300 470 300 400 330 340
+             C370 250 460 190 560 190 C690 190 790 290 790 420 C790 520 740 590 680 630 L680 820"
+          fill="none" stroke="url(#g)" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+
+    <!-- neural network inside head -->
+    <g stroke="#d4af5f" stroke-width="3" opacity=".9">
+      <line x1="430" y1="330" x2="540" y2="280"/><line x1="540" y1="280" x2="660" y2="320"/>
+      <line x1="430" y1="330" x2="500" y2="420"/><line x1="540" y1="280" x2="500" y2="420"/>
+      <line x1="540" y1="280" x2="620" y2="430"/><line x1="660" y1="320" x2="620" y2="430"/>
+      <line x1="660" y1="320" x2="720" y2="430"/><line x1="500" y1="420" x2="620" y2="430"/>
+      <line x1="620" y1="430" x2="720" y2="430"/><line x1="500" y1="420" x2="560" y2="530"/>
+      <line x1="620" y1="430" x2="560" y2="530"/><line x1="620" y1="430" x2="680" y2="540"/>
+      <line x1="720" y1="430" x2="680" y2="540"/><line x1="400" y1="450" x2="500" y2="420"/>
+      <line x1="400" y1="450" x2="560" y2="530"/>
+    </g>
+    <g fill="#0b0b0b" stroke="url(#g)" stroke-width="4">
+      <circle cx="430" cy="330" r="14"/><circle cx="540" cy="280" r="16"/><circle cx="660" cy="320" r="14"/>
+      <circle cx="500" cy="420" r="18"/><circle cx="620" cy="430" r="22"/><circle cx="720" cy="430" r="13"/>
+      <circle cx="560" cy="530" r="15"/><circle cx="680" cy="540" r="13"/><circle cx="400" cy="450" r="12"/>
+    </g>
+    <circle cx="620" cy="430" r="8" fill="#f7e7b4"/>
+
+    <!-- laptop -->
+    <g fill="none" stroke="url(#g)" stroke-width="6" stroke-linejoin="round">
+      <rect x="400" y="760" width="300" height="180" rx="10" fill="#0b0b0b"/>
+      <path d="M350 940 L750 940 L720 975 L380 975 Z" fill="#0b0b0b"/>
+    </g>
+    <g stroke="#d4af5f" stroke-width="4" stroke-linecap="round" opacity=".85">
+      <line x1="440" y1="810" x2="560" y2="810"/><line x1="440" y1="845" x2="590" y2="845"/>
+      <line x1="440" y1="880" x2="600" y2="880"/>
+    </g>
+    <path d="M630 795 l8 18 18 8 -18 8 -8 18 -8 -18 -18 -8 18 -8z" fill="url(#g)"/>
+  </svg>
+
+  <div class="footer">PRODUCTIVITATE<span class="dot">◆</span>CLIENȚI<span class="dot">◆</span>AUTOMATIZARE</div>
+</div>
+</body>
+</html>
